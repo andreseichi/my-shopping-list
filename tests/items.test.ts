@@ -52,11 +52,7 @@ describe("Test GET /items/:id ", () => {
   });
 
   it("should return status 404 if the item with that ID doesn't exist", async () => {
-    const item = itemFactory();
-    const result = await supertest(app).post("/items").send(item);
-
-    const idItemCreated = result.body.id;
-    const resultGet = await supertest(app).get(`/items/${idItemCreated + 1}`);
+    const resultGet = await supertest(app).get(`/items/-1`);
 
     expect(resultGet.status).toBe(404);
   });
