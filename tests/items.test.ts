@@ -60,6 +60,4 @@ describe("Test GET /items/:id ", () => {
 
     expect(resultGet.status).toBe(404);
   });
-
-  it.todo("Deve retornar status 404 caso não exista um item com esse id");
 });
