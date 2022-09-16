@@ -5,7 +5,7 @@ import { prisma } from "../src/database";
 import itemFactory from "../prisma/itemFactory";
 
 beforeEach(async () => {
-  await prisma.$executeRaw`TRUNCATE TABLE items`;
+  await prisma.$executeRaw`TRUNCATE TABLE items RESTART IDENTITY CASCADE`;
 });
 
 describe("Test POST /items ", () => {
